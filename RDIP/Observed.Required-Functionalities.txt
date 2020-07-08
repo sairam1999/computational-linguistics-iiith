@@ -1,0 +1,52 @@
+%%% Observed Functionalities in the Experiment - Forming Sentences:- %%%
+
+1. ON Clicking Introduction tab - Redirecting to Introduction.html
+2. On Clicking Theory tab       - Redirecting to theory.html
+3. ON Clicking Objective tab    - Redirecting to Objective.html
+4. ON Clicking Experiment tab   - Redirecting to Experiment.html
+        ON loading(Experiment tab) -
+        A Dropdown is enabled to select language -English/Hindi
+            if selected(ENGLISH)
+                i)A text is appeared " Form a sentence (Declarative or Interrogative or any other type) from the given words (select the buttons in proper order)" 
+                ii) Buttons of Jumbled words
+                    ON CLICKING (1 or more word buttons)
+                        i)word at the current position is disappeared 
+                        ii)A text is appeared "Formed Sentence (after selecting words):"
+                        iii)and also selected words are appended at the end to form a sentence.
+                        iv) " Reform the sentence " button also enabled which resets the text as appeared as before.
+                    ON CLICKING (all the word buttons)
+                        i)Along with the above 4 functionalities(i,ii,iii,iv),
+                        ii)A button " Check the correctness of the sentence" is enabled.
+                        ON CLICKING (Check the correctness of the sentence)
+                            if("CORRECT SENTENCE)
+                                GREEN TEXT "CORRECT SENTENCE " is appeared.
+                            else
+                                i)RED TEXT " WRONG SENTENCE " is appeared.
+                                ii) BUTTON " Get Correct Sentence " is appeared.
+                                ON CLICK(GET Corrrect Sentence)
+                                    i)Correct Sentences are Displayed.
+                                    AND the Button toggled to (HIDE THE CORRECT SENTENCE)
+                                    ON CLICK(" HIDE THE CORRECT SENTENCE ")
+                                        ALL CORRECT ANSWERS ARE HIDDEN.
+            if selected(HINDI)
+                SAME FUNCTIONALITIES AS ABOVE ENGLISH.
+
+5. ON Clicking QUIZZES tab   - Redirecting to Quizzes.html
+6. ON Clicking Procedure tab   - Redirecting to Procedure.html
+
+
+%%% TO Be ADDED Possible Functionalities in the Experiment - Forming Sentences:- %%%
+
+1. In Experiment tab:
+    IF (Sentence is correct)
+        Then new random question needs to ge generated and all the functionalities are to be RESET to solve the new Sentence in same language instead of repeating the same question.
+2.  In QUIZZES tab:
+    selection of options is to be done among the options displayed to evaluate correct answer.
+3. Order of tabs to be arranged:
+    i) QUIZZES tab should be placed at last
+    ii) Procedure tab to be placed before the Experiment tab.
+
+
+
+
+
