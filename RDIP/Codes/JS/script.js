@@ -1,11 +1,14 @@
+
 //selecting language value
+
 function selectLanguage(){
+
     var language = document.getElementById("select-lang").value;
 
-      //printing text --Form a sentence (Declarative or Interrogative or any other type) from the given words
         if(language==='eng'|| language==='hindi')
-        {
+        {      //printing message --Form a sentence (Declarative or Interrogative or any other type) from the given words
             document.getElementById("sentence-intro").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words";
+            // printing message "(select the buttons in proper order)"
             document.getElementById("button-select-intro").innerHTML="(select the buttons in proper order)";
             document.getElementById("sentence-intro").style.color="blue";
             document.getElementById("sentence-intro").style.fontSize="100%";
