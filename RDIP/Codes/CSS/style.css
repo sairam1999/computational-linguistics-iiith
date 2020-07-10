@@ -109,8 +109,13 @@ p {
  .general-text{
     margin: 0% 18%;
     padding:0%;
-    
-    
-
+ }
+ #jumbled-words{
+     text-align: center;
+     margin-top: 5%;
+ }
+ #btn{
+     margin-right: 2%;
+     
  }
  
