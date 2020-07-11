@@ -1,6 +1,6 @@
 
 //selecting language value
-
+var reformButtons;
 function selectLanguage(){
 
     var language = document.getElementById("select-lang").value;
@@ -74,9 +74,10 @@ function selectLanguage(){
                 document.getElementById("msgFormedSentence").innerHTML="";
                 document.getElementById("selectedWord").innerHTML ="";
                 document.getElementById("reformButton").innerHTML = "";
-
-
             }
+            //all the jumbled buttons are stored to display them in same random/jumbled order when reform button is clicked.
+             reformButtons=document.getElementById("jumbled-words").innerHTML ;
+
         
         }
         
@@ -161,8 +162,9 @@ function selectLanguage(){
                     document.getElementById("msgFormedSentence").innerHTML="";
                     document.getElementById("selectedWord").innerHTML ="";
                     document.getElementById("reformButton").innerHTML = "";
-
                 }
+                //all the jumbled buttons are stored to display them in same random/jumbled order when reform button is clicked
+                 reformButtons=document.getElementById("jumbled-words").innerHTML;
         }
         else
         {
@@ -178,8 +180,19 @@ function selectLanguage(){
             document.getElementById("msgFormedSentence").innerHTML="Formed Sentence <span>(after selecting words):</span>";
             document.getElementById("selectedWord").innerHTML +=" "+bvalue;
             document.getElementById(bid).style.display="none";
-            document.getElementById("reformButton").innerHTML = "<button class='reform' id='reform'> Re-form the sentence</button>";
+            document.getElementById("reformButton").innerHTML = "<button class='reform' id='reform' onclick='reform()'> Re-form the sentence</button>";
 
 
         }
+    function reform()
+    {
+        //console.log(reformButtons);
+        document.getElementById("jumbled-words").innerHTML = reformButtons;
+        document.getElementById("msgFormedSentence").innerHTML="";
+        document.getElementById("selectedWord").innerHTML ="";
+        document.getElementById("reformButton").innerHTML = "";
+
+
+    }
+
         
