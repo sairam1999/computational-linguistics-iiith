@@ -159,6 +159,8 @@ function selectLanguage(){
             document.getElementById("check-correctness").innerHTML="";
             document.getElementById("correct").innerHTML="";
             document.getElementById("wrong").innerHTML="";
+            document.getElementById("showAnswer").innerHTML="";
+
             
            
              //array with all 10 different english sentences
@@ -220,6 +222,8 @@ function selectLanguage(){
                  document.getElementById("jumbled-words").innerHTML=" "
                  document.getElementById("correct").innerHTML="";
                  document.getElementById("wrong").innerHTML="";
+                 document.getElementById("showAnswer").innerHTML="";
+
 
                 //array with all 7 different hindi sentences
                      allHindi = [hindi1,hindi2,hindi3,hindi4,hindi5,hindi6,hindi7];
@@ -309,6 +313,8 @@ function selectLanguage(){
         document.getElementById("check-correctness").innerHTML="";
         document.getElementById("correct").innerHTML="";
         document.getElementById("wrong").innerHTML="";
+        document.getElementById("showAnswer").innerHTML=""
+
     }
 
 
@@ -323,10 +329,13 @@ function selectLanguage(){
             {
             document.getElementById("correct").innerHTML="Correct Answer!!!";
             document.getElementById("wrong").innerHTML="";
+            document.getElementById("showAnswer").innerHTML=""
+
             }
             else{
                 document.getElementById("wrong").innerHTML="Wrong Answer !!!";
                 document.getElementById("correct").innerHTML="";
+                document.getElementById("showAnswer").innerHTML="<button id='show'>Get Correct Answer</button>"
             }
         }
         else if(language=='hindi')
@@ -347,10 +356,14 @@ function selectLanguage(){
             {
                 document.getElementById("correct").innerHTML="Correct Answer!!!";
                 document.getElementById("wrong").innerHTML="";
+                document.getElementById("showAnswer").innerHTML=""
+
             }
             else{
                 document.getElementById("wrong").innerHTML="Wrong Answer!!!";
                 document.getElementById("correct").innerHTML="";
+                document.getElementById("showAnswer").innerHTML="<button id='show'>Get Correct Answer</button>"
+
             }
         }
     }
