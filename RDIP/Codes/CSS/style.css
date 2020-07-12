@@ -116,7 +116,7 @@ p {
 
  }
  
- #jumbled-words,#selectedWord,#reformButton{
+ #jumbled-words,#selectedWord,#reformButton,#check-correctness{
      text-align: center;
      margin-top: 2%;
  }

@@ -1,12 +1,15 @@
 
 //selecting language value
 var reformButtons;
+var wordcount=0;
+var count=0;
 function selectLanguage(){
 
     var language = document.getElementById("select-lang").value;
 
         if(language==='eng')
         {//all multiple correct english sentences with 10 different questions
+
             var english1 = ['John ate an apple before afternoon',
                             'before afternoon John ate an apple',
                             'John before afternoon ate an apple'
@@ -43,7 +46,15 @@ function selectLanguage(){
                              'I‌ ‌bought‌ ‌a‌ ‌book‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌ ‌yesterday‌',
                              'I‌ ‌bought‌ ‌a‌ ‌book‌ ‌yesterday‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌',
                              'yesterday‌ ‌I‌ ‌bought‌ ‌a‌ ‌book‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌'];
-            //array with all 10 different english sentences
+
+            //emptying the fields while switching between languages(english/hindi)
+            document.getElementById("msgFormedSentence").innerHTML="";
+            document.getElementById("selectedWord").innerHTML ="";
+            document.getElementById("reformButton").innerHTML = "";
+            document.getElementById("check-correctness").innerHTML="";
+            
+           
+             //array with all 10 different english sentences
             var allEnglish = [english1,english2,english3,english4,english5,english6,english7,english8,english9,english10];
 
             //printing message --Form a sentence (Declarative or Interrogative or any other type) from the given words
@@ -63,22 +74,18 @@ function selectLanguage(){
             //console.log(randomEnglishSentence)
             
             var words=randomEnglishSentence.split(" ");
-            var i=0,l=0;
-            l = words.length
+            var i=0;
+            count=0;
+            wordcount = words.length
             document.getElementById("jumbled-words").innerHTML=" "
-            for(i=0;i<l;i++)
+            for(i=0;i<wordcount;i++)
             {
-                document.getElementById("jumbled-words").innerHTML += "<button class='btn' id='btn"+i+"' value='"+words[i]+"' onclick='Bfunction(this.id,this.value);'>"+words[i]+"</button>";
-                console.log("<button class='btn' id='btn"+i+"' value='"+words[i]+"' onclick='Bfunction(this.id,this.value);'>"+words[i]+"</button>");
-            //emptying the string data while switching between languages(english/hindi)
-                document.getElementById("msgFormedSentence").innerHTML="";
-                document.getElementById("selectedWord").innerHTML ="";
-                document.getElementById("reformButton").innerHTML = "";
+                document.getElementById("jumbled-words").innerHTML += "<button class='btn' id='btn"+i+"' value='"+words[i]+"' onclick='Bfunction(this.id,this.value);'>"+words[i]+"</button>";  
             }
+
+
             //all the jumbled buttons are stored to display them in same random/jumbled order when reform button is clicked.
              reformButtons=document.getElementById("jumbled-words").innerHTML ;
-
-        
         }
         
 
@@ -131,6 +138,13 @@ function selectLanguage(){
                         '‌है‌ ‌वहाँ‌ ‌एक‌ ‌बड़ी‌ ‌सी‌ ‌किताब‌',
                         'है‌ ‌वहाँ‌ ‌बड़ी‌ ‌सी‌ ‌एक‌ ‌किताब‌'];
 
+                 //emptying the string data while switching between languages(english/hindi)
+                 document.getElementById("msgFormedSentence").innerHTML="";
+                 document.getElementById("selectedWord").innerHTML ="";
+                 document.getElementById("reformButton").innerHTML = "";
+                 document.getElementById("check-correctness").innerHTML="";
+                 document.getElementById("jumbled-words").innerHTML=" "
+
                 //array with all 7 different hindi sentences
                     var allHindi = [hindi1,hindi2,hindi3,hindi4,hindi5,hindi6,hindi7];
                 
@@ -151,20 +165,18 @@ function selectLanguage(){
                 //console.log(randomHindiSentence)
                 
                 var words=randomHindiSentence.split(" ");
-                var i=0,l=0;
-                l = words.length
-                document.getElementById("jumbled-words").innerHTML=" "
-                for(i=0;i<l;i++)
+                var i=0;
+                count=0;
+                wordcount = words.length
+                
+                for(i=0;i<wordcount;i++)
                 {
                     document.getElementById("jumbled-words").innerHTML += "<button class='btn' id='btn"+i+"' value='"+words[i]+"' onclick='Bfunction(this.id,this.value);'>"+words[i]+"</button>";
-                    console.log(words[i]);
-                //emptying the string data while switching between languages(english/hindi)
-                    document.getElementById("msgFormedSentence").innerHTML="";
-                    document.getElementById("selectedWord").innerHTML ="";
-                    document.getElementById("reformButton").innerHTML = "";
+                    //console.log(words[i]);
                 }
                 //all the jumbled buttons are stored to display them in same random/jumbled order when reform button is clicked
                  reformButtons=document.getElementById("jumbled-words").innerHTML;
+                
         }
         else
         {
@@ -174,6 +186,7 @@ function selectLanguage(){
         
     }
     //when word buttons are clicked then,adding message, adding word to sentence,adding Reform button,removing self button.
+    var selectedSentence;
     function Bfunction(bid,bvalue)
         {
            // console.log(bid,bvalue);
@@ -181,6 +194,18 @@ function selectLanguage(){
             document.getElementById("selectedWord").innerHTML +=" "+bvalue;
             document.getElementById(bid).style.display="none";
             document.getElementById("reformButton").innerHTML = "<button class='reform' id='reform' onclick='reform()'> Re-form the sentence</button>";
+            count++;
+            //console.log(count)
+            //to print check correctness button and storing all the selected words into a sentence
+            if(wordcount==count && wordcount>0)
+            {
+                document.getElementById("check-correctness").innerHTML="<button id='check'>Check Correctness of the Sentence</button>";
+                selectedSentence = document.getElementById("selectedWord").innerHTML;
+                console.log(selectedSentence);
+            }
+            else{
+                document.getElementById("check-correctness").innerHTML="";   
+            }
 
 
         }
@@ -191,6 +216,8 @@ function selectLanguage(){
         document.getElementById("msgFormedSentence").innerHTML="";
         document.getElementById("selectedWord").innerHTML ="";
         document.getElementById("reformButton").innerHTML = "";
+        count=0;
+        document.getElementById("check-correctness").innerHTML="";
 
 
     }
