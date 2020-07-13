@@ -118,7 +118,7 @@ p {
  
  #jumbled-words,#selectedWord,#reformButton,#check-correctness,#showAnswer{
      text-align: center;
-     margin-top: 2%;
+     margin-top: 3%;
  }
  #selectedWord{
      font-size: 200%;
@@ -139,13 +139,13 @@ p {
  }
  #correct{
      margin-top: 3%;
-     font-size: 160%;
+     font-size: 180%;
      color: green;
      text-align: center;
  }
  #wrong{
      margin-top: 3%;
-     font-size: 160%;
+     font-size: 180%;
      color: red;
      text-align: center;
  }

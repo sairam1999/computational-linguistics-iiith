@@ -13,7 +13,7 @@ var randomHindi;
 
 
 //all multiple correct english sentences with 10 different questions
-var english1 = ['John ate an apple before afternoon',
+            var english1 = ['John ate an apple before afternoon',
                             'before afternoon John ate an apple',
                             'John before afternoon ate an apple'
                             ];
@@ -50,8 +50,8 @@ var english1 = ['John ate an apple before afternoon',
                              'I‌ ‌bought‌ ‌a‌ ‌book‌ ‌yesterday‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌',
                              'yesterday‌ ‌I‌ ‌bought‌ ‌a‌ ‌book‌ ‌that‌ ‌I‌ ‌told‌ ‌her‌'];
 
-     //all multiple correct hindi sentences with 7 different sentences
-                    var hindi1 = ['राम‌ ‌और‌ ‌श्याम‌ ‌बाजार‌ ‌गयें‌',
+ //all multiple correct hindi sentences with 7 different sentences
+                var hindi1 = ['राम‌ ‌और‌ ‌श्याम‌ ‌बाजार‌ ‌गयें‌',
                     'राम‌ ‌और‌ ‌श्याम‌ ‌गयें‌ ‌बाजार‌',
                     'बाजार‌ ‌गयें‌ ‌राम‌ ‌और‌ ‌श्याम‌',
                     'गयें‌ ‌बाजार‌ ‌राम‌ ‌और‌ ‌श्याम‌'];
@@ -97,6 +97,7 @@ var english1 = ['John ate an apple before afternoon',
                     'वहाँ‌ ‌है‌ ‌बड़ी‌ ‌सी‌ ‌एक‌ ‌किताब‌',
                     '‌है‌ ‌वहाँ‌ ‌एक‌ ‌बड़ी‌ ‌सी‌ ‌किताब‌',
                     'है‌ ‌वहाँ‌ ‌बड़ी‌ ‌सी‌ ‌एक‌ ‌किताब‌'];
+//all hindi strings in one array
         var hindiALL=[
                     'राम‌ ‌और‌ ‌श्याम‌ ‌बाजार‌ ‌गयें‌',
                     'राम‌ ‌और‌ ‌श्याम‌ ‌गयें‌ ‌बाजार‌',
@@ -267,6 +268,7 @@ function selectLanguage(){
                     document.getElementById("jumbled-words").innerHTML += "<button class='btn' id='btn"+i+"' value='"+words[i]+"' onclick='Bfunction(this.id,this.value);'>"+words[i]+"</button>";
                     //console.log(words[i]);
                 }
+
                 //all the jumbled buttons are stored to display them in same random/jumbled order when reform button is clicked
                  reformButtons=document.getElementById("jumbled-words").innerHTML;
                 
@@ -274,9 +276,7 @@ function selectLanguage(){
         else
         {
             alert("Please Select A Language.");
-        }
-
-        
+        }   
     }
     //when word buttons are clicked then,adding message, adding word to sentence,adding Reform button,removing self button.
     var selectedSentence;
@@ -289,7 +289,7 @@ function selectLanguage(){
             document.getElementById("reformButton").innerHTML = "<button class='reform' id='reform' onclick='reform()'> Re-form the sentence</button>";
             count++;
             //console.log(count)
-            //to print check correctness button and storing all the selected words into a sentence
+    //to print check correctness button and storing all the selected words into a sentence
             if(wordcount==count && wordcount>0)
             {
                 selectedSentence = document.getElementById("selectedWord").innerHTML;
@@ -319,6 +319,7 @@ function selectLanguage(){
 
 
     //to compare the selected sentence and the corpus sentence
+    var answers="";
     function check()
     {
         var result= selectedSentence.trim();
@@ -335,7 +336,7 @@ function selectLanguage(){
             else{
                 document.getElementById("wrong").innerHTML="Wrong Answer !!!";
                 document.getElementById("correct").innerHTML="";
-                document.getElementById("showAnswer").innerHTML="<button id='show'>Get Correct Answer</button>"
+                document.getElementById("showAnswer").innerHTML="<button id='show' onclick='show(this.id)'>Get Correct Sentence</button>"
             }
         }
         else if(language=='hindi')
@@ -362,9 +363,52 @@ function selectLanguage(){
             else{
                 document.getElementById("wrong").innerHTML="Wrong Answer!!!";
                 document.getElementById("correct").innerHTML="";
-                document.getElementById("showAnswer").innerHTML="<button id='show'>Get Correct Answer</button>"
+                document.getElementById("showAnswer").innerHTML="<button id='getCorrectSentence' onclick='show(this.id)'>Get Correct Sentence</button>"
 
             }
+        }
+    }
+    //to display all answers when wrong sentence is selected
+
+    function show(id)
+    {   var i=0;
+        document.getElementById(id).style.display="none";
+        document.getElementById("showAnswer").innerHTML="<button id='hide' onclick='toggle()'>Hide the Correct Sentences</button>"; 
+        //console.log(randomEnglish)
+        answers="";
+        if(language=="eng")
+        {var l=randomEnglish.length;
+            //document.getElementById("showAnswer").innerHTML="<br>";
+            for(i=0;i<l;i++)
+            {  
+                console.log(randomEnglish[i])
+                document.getElementById("showAnswer").innerHTML+="<p>"+randomEnglish[i]+"</p><br>";
+                answers+="<p>"+randomEnglish[i]+"</p><br>";
+            }   
+        }
+        if(language=="hindi")
+        {var i=0;
+            for(i=0;i<randomHindi.length;i++)
+            {
+                console.log(randomHindi[i])
+                document.getElementById("showAnswer").innerHTML+="<p>"+randomHindi[i]+"</p><br>";
+                answers+="<p>"+randomHindi[i]+"</p><br>";  
+            }
+        }
+
+    }
+    function toggle()
+    {
+        if(document.getElementById("hide").innerHTML=='Hide the Correct Sentences')
+        { 
+            document.getElementById("showAnswer").innerHTML="";
+            document.getElementById("showAnswer").innerHTML="<button id='hide' onclick='toggle()'>Get Answers</button>";
+           // document.getElementById("hide").innerHTML="Get Answers"
+        }
+        else
+        {
+            document.getElementById("showAnswer").innerHTML+=answers;
+            document.getElementById("hide").innerHTML="Hide the Correct Sentences";    
         }
     }
 
