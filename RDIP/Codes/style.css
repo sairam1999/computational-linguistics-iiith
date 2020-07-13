@@ -15,6 +15,7 @@ p {
 .content{
     margin: -1% 17% 0% 15.5%;
 }
+
 .lab-name a{
     background-color: dodgerblue;
     font-weight: 600;
@@ -110,6 +111,7 @@ p {
  .general-text{
     margin: 0% 16%;
     padding:0%;
+    color:rgb(41, 41, 196);
  }
  #sentence-intro{
     font-weight: 600;
@@ -138,14 +140,14 @@ p {
      font-weight: 200;
  }
  #correct{
-     margin-top: 3%;
-     font-size: 180%;
+     margin-top: 2%;
+     font-size: 200%;
      color: green;
      text-align: center;
  }
  #wrong{
-     margin-top: 3%;
-     font-size: 180%;
+     margin-top: 2%;
+     font-size: 200%;
      color: red;
      text-align: center;
  }
