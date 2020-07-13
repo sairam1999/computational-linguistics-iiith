@@ -124,6 +124,7 @@ p {
  }
  #selectedWord{
      font-size: 200%;
+     font-weight: 600;
      color:rgb(66, 62, 62);
  }
  .btn{
