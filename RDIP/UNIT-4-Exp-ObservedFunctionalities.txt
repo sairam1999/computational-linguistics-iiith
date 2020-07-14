@@ -1,0 +1,47 @@
+%%% Observed Functionalities in the Experiment-2 UNIT 4 -TOKENS & TYPES :- %%%
+
+1. ON Clicking Introduction tab - Redirecting to Introduction.html
+2. On Clicking Theory tab       - Redirecting to theory.html
+3. ON Clicking Objective tab    - Redirecting to Objective.html
+4. ON Clicking Experiment tab   - Redirecting to Experiment.html
+        ON loading(Experiment tab) -
+        A Dropdown is enabled to SELECT A CORPUS -(Corpus1/Corpus2/Corpus3)
+            if selected(Corpus1/Corpus2/Corpus3)
+                i)A paragraph w.r.t corpus is appeared 
+                ii)A text "Enter the number of tokens and types for the above corpus:" is appeared
+                iii)2 Fields(#tokens, #types along with 2 input fields)
+                iv)A Submit Button
+                    ON CLICKING SUBMIT BUTTON
+                        if(atleast 1 wrong field)then,
+                            i) Input boxes changes RED.
+                            ii) New Message appears as "Wrong Answer" 
+                        if (both correct fields) then, TOKENS ARE COUNT OF WORDS, TYPES BASED ON UNIQUE WORDS
+                            i) Input box become GREEN.
+                            ii) Message appears as "Right Answer" 
+                            iii) Continue Button is appear
+                                ON CLICKING (Continue button)
+                                    i)correct answer message hides
+                                    ii)"Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types." is displayed
+                                    iii)#new types is displayed
+                                    iv)An input field displayed
+                                    V)Submit button displayed
+                                        ON CLICKING (Submit)
+                                            if(input is correct) CONCEPT BASED ON SNOWBALL STEMMER
+                                                i)GREEN TEXT "CORRECT Answer " is appeared.
+                                                ii)input field turns green
+                                        EXPERIMENT COMPLETES.
+                                            else
+                                                i)RED TEXT " WRONG Answer " is appeared.
+                                                ii) input filed turns red
+
+                                                
+               
+
+5. ON Clicking QUIZZES tab   - Redirecting to Quizzes.html
+6. ON Clicking Procedure tab   - Redirecting to Procedure.html
+
+
+
+
+
+
