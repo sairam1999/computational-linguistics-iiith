@@ -108,3 +108,24 @@ p {
      padding: 0.3%;
      
  }
+ #corpus-text,#msg-to-enter-tokens{
+     font-size: 110%;
+     color: rgb(66, 62, 62);
+     text-align: center;
+     padding: 1%;
+ }
+ #iptable{
+     margin:0% 0% 0% 35%;
+    }
+ table{
+     border-collapse: collapse;
+     width: 60%;
+     
+     }
+ tr{
+     width: 10%;
+ }
+ input{
+     width: 40%;
+     margin:5% 5% 5% 25%;
+ }
