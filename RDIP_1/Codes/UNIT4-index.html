@@ -57,13 +57,16 @@
                             <option value="c3">Corpus 3</option>
                     </select>
                     </div>
-                    <p id="corpus-text"></p>
+                    <div id="corpus-text"></div>
                     <p id="msg-to-enter-tokens"></p>
                     <div id="iptable">
                     <table border="border">
-                        <tr><td>#tokens:</td><td><input type="text" name="token"></td></tr>
-                        <tr><td>#types:</td><td><input type="text" name="types"></td></tr>
+                        <tr><td>#tokens:</td><td><input type="text" name="token" id="token"></td></tr>
+                        <tr><td>#types:</td><td><input type="text" name="types" id="types"></td></tr>
                     </table>
+                    <input type="submit" name="submit" onclick="countWords()">
+
+                    
                     </div>
                    
 

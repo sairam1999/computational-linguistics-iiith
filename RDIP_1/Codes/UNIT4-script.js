@@ -27,3 +27,20 @@ function selectCorpus()
     {alert("Select A Corpus");
     }
 }
+var count;
+var iptoken;
+var fullstr;
+function countWords()
+{   fullstr=document.getElementById('corpus-text').innerHTML;
+    count = document.getElementById('corpus-text').innerHTML.split(' ').length;
+    var iptoken = document.getElementById('token').value;
+    if(iptoken==count)
+    {
+    console.log("yes")
+    }
+    else{
+        console.log("No")
+    }
+
+    
+}
